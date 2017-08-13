@@ -126,28 +126,28 @@ into the {body} of the default.hbs template --}}
                             {{/foreach}}
                         </ul>
                     </div>
+                    <div id="disqus_thread"></div>
+                    <script>
+
+                    var disqus_config = function () {
+                    this.page.url = '{{url absolute="true"}}';
+                    this.page.identifier = '{{comment_id}}';
+                    };
+
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://tonnymobi.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                     <footer class="read-next-card-footer">
                         <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
                     </footer>
                 </article>
                 {{/if}}
             {{/get}}
-            <div id="disqus_thread"></div>
-<script>
-
-var disqus_config = function () {
-this.page.url = '{{url absolute="true"}}';
-this.page.identifier = '{{comment_id}}';
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://tonnymobi.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
